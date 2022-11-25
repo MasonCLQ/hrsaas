@@ -35,6 +35,13 @@ module.exports = {
     overlay: {
       warnings: false,
       errors: true
+    },
+    // 配置反向代理
+    proxy: {
+      '/api': {
+        target: 'http://ihrm-java.itheima.net', // 要代理的服务器地址，不用写api
+        changeOrigin: true // 是否跨域
+      }
     }
   },
   configureWebpack: {
